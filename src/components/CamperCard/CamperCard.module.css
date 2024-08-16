@@ -1,0 +1,80 @@
+.camperCard {
+  display: flex;
+  border: 1px solid #10182833;
+  padding: 24px;
+  border-radius: 20px;
+  margin-bottom: 32px;
+  gap: 24px;
+  width: 100%; /* Додаємо ширину для контейнера */
+  box-sizing: border-box; /* Включає padding та border у загальну ширину */
+}
+
+.imgCard {
+  border-radius: 10px;
+  width: 290px;
+  object-fit: cover;
+  object-position: unset;
+}
+.textCard {
+}
+
+.horizontContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.description {
+  white-space: nowrap; /* Забороняє перенос тексту */
+  width: 500px;
+  overflow: hidden; /* Обрізає текст, якщо він виходить за межі контейнера */
+  text-overflow: ellipsis; /* Додає три крапки, якщо текст не поміщається */
+  max-width: 100%; /* Обмежує ширину опису шириною батьківського контейнера */
+  display: block;
+  margin-bottom: 24px;
+}
+.iconStyle {
+  width: 24px;
+  height: 24px;
+  fill: black;
+}
+.iconPrice {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.iconLocation {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.buttonBox {
+  display: flex;
+  gap: 8px;
+}
+.buttonText {
+  display: flex;
+  gap: 8px; /* Відстань між іконкою та текстом всередині кнопки */
+  align-items: center; /* Вирівнюємо іконку та текст по центру */
+  background-color: #f2f4f7;
+  padding: 12px 18px 12px 18px;
+  border-radius: 100px;
+  border: none;
+  margin-bottom: 24px;
+}
+
+.btnShowSearch {
+  width: 173px;
+  height: 56px;
+  padding: 16px 40px;
+  gap: 10px;
+  border-radius: 200px;
+  background-color: #e44848;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+
+.btnShowSearch:hover {
+  background: #d84343;
+}

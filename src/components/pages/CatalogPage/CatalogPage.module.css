@@ -1,23 +1,30 @@
 .container {
-  width: 360px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 50vh; /* Займає половину висоти екрану */
-  text-align: center; /* Центрування тексту всередині контейнера */
-  margin: 0;
+  justify-content: space-between; /* Проміжок між колонками */
+  gap: 64px; /* Проміжок між лівою і правою колонками */
+
+  max-width: 1440px; /* Загальна ширина контейнера */
+  width: 100%; /* Ширина контейнера займає всю доступну ширину */
+  margin: 0 auto; /* Вирівнювання по центру екрану */
+  padding: 0 20px; /* Відступи від країв контейнера (20px зліва і справа) */
+}
+
+.leftSideBox {
+  flex: 1;
+  max-width: 300px; /* Встановіть потрібну ширину для лівої колонки */
+}
+
+.rightSideBox {
+  flex: 3;
+  /* Інші стилі для правої колонки */
 }
 
 .btnShowSearch {
-  width: Hug (173px) px;
-  height: Hug (56px) px;
-  top: 791px;
-  left: 64px;
-  padding: 16px 60px 16px 60px;
+  width: 173px;
+  height: 56px;
+  padding: 16px 60px;
   gap: 10px;
   border-radius: 200px;
-  opacity: 0px;
   background-color: #e44848;
   color: #ffffff;
   cursor: pointer;
