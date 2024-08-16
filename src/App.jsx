@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/pages/HomePage/HomePage";
 import FavoritesPage from "./components/pages/FavoritesPage/FavoritesPage";
 import CatalogPage from "./components/pages/CatalogPage/CatalogPage";
+import Navigation from "./components/Navigation/Navigation";
 
 // import ContactForm from "./components/ContactForm/ContactForm";
 // import SearchBox from "./components/SearchBox/SearchBox";
@@ -27,13 +28,16 @@ export default function App() {
   // }, [contacts]);
 
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/catalog" element={<CatalogPage />} />
-      <Route path="/favorites" element={<FavoritesPage />} />
-      {/* Додатково, маршрут для невідомих шляхів */}
-      <Route path="*" element={<HomePage />} />
-    </Routes>
+    <>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="*" element={<HomePage />} />{" "}
+        {/* Перенаправлення на Home для невідомих маршрутів */}
+      </Routes>
+    </>
 
     // <div className={css.container}>
     //   <h1 className={css.title}>CampcarSale</h1>

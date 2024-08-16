@@ -1,31 +1,11 @@
-import DocumentTitle from "../../DocumentTitle";
-
-export default function HomePage() {
+import css from "./HomePage.module.css";
+function HomePage() {
   return (
-    <>
-      <DocumentTitle>Home</DocumentTitle>
-      <h1>HomePage</h1>;
-    </>
+    <div className={css.container}>
+      <h1>Welcome to Camper Rental</h1>
+      <p>Explore our services and find the best camper for your adventure.</p>
+    </div>
   );
 }
 
-/* <>
-  <DocumentTitle>Home</DocumentTitle>
-
-  <div className={css.container}>
-    <Typography
-      variant="h2"
-      component="span"
-      color="primary"
-      className={css.customText}
-    >
-      Welcom to your contacts manager!
-      <img
-        src="https://media.tenor.com/GCbRbnL1MYwAAAAi/contact-phone-number.gif"
-        alt="Phone gif"
-        className={css.gif}
-      />
-    </Typography>
-  </div>
-</>;
-   */
+export default HomePage;

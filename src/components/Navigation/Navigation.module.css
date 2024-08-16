@@ -1,0 +1,34 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px; /* Висота навігаційної панелі */
+  background-color: #59a0e7; /* Колір фону панелі */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navButton {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link {
+  color: rgb(28, 3, 68);
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s;
+}
+
+.active {
+  color: red;
+}
+
+.navButton :hover {
+  font-size: 1.02em;
+  text-decoration: none;
+  transition: 0.2s;
+  transform: scale(1.1);
+}
