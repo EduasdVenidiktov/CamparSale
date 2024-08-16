@@ -1,0 +1,29 @@
+.container {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; /* Займає половину висоти екрану */
+  text-align: center; /* Центрування тексту всередині контейнера */
+  margin: 0;
+}
+
+.btnShowSearch {
+  width: Hug (173px) px;
+  height: Hug (56px) px;
+  top: 791px;
+  left: 64px;
+  padding: 16px 60px 16px 60px;
+  gap: 10px;
+  border-radius: 200px;
+  opacity: 0px;
+  background-color: #e44848;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+
+.btnShowSearch:hover {
+  background: #d84343;
+}

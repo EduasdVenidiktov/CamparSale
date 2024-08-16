@@ -1,0 +1,22 @@
+.buttonBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Три колонки для верхнього рядка */
+  grid-template-rows: auto auto; /* Два рядки */
+  gap: 10px; /* Відстань між кнопками */
+  justify-items: center; /* Центрування кнопок по горизонталі */
+  text-align: center; /* Центрування тексту в кнопках */
+}
+
+.buttonBox button {
+  cursor: pointer; /* Курсор у вигляді покажчика */
+  padding: 10px 20px; /* Додати відступи для кнопок */
+  font-size: 16px; /* Розмір шрифту для кнопок */
+  border: none; /* Вилучити обводку */
+  border-radius: 5px; /* Закруглені кути */
+  background-color: #f0f0f0; /* Фоновий колір кнопок */
+  transition: background-color 0.3s; /* Плавний перехід фону */
+}
+
+.buttonBox button:hover {
+  background-color: #e0e0e0; /* Колір фону при наведенні */
+}
