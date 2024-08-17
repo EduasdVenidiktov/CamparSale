@@ -81,5 +81,29 @@
 
 .btnHeart {
   background-color: #f7f7f7;
-  border: none;
+  border: black;
+}
+
+.iconSize {
+  width: 24px;
+  height: 24px;
+  transition: color 0.3s; /* Плавний перехід кольору */
+  border: black;
+}
+.iconStarActive {
+  /* Жовтий колір для активної зірки */
+}
+
+.iconSize {
+  color: #ffc531;
+  stroke: black; /* Чорний контур для неактивної зірки */
+  stroke-width: 1px; /* Товщина контуру */
+}
+
+.iconSize.active {
+}
+.ratingText {
+  text-decoration: underline; /* Підкреслює текст */
+  color: black; /* Задайте колір для підкреслення */
+  font-weight: normal; /* Додає жирність тексту */
 }
