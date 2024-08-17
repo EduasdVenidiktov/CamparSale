@@ -12,7 +12,7 @@
   display: flex;
   flex-wrap: wrap; /* Дозволити перенесення кнопок на новий ряд */
   gap: 8px; /* Відстань між кнопками */
-  width: 100%; /* Ширина на всю ширину контейнера */
+  /* width: 100%;  */
   margin-bottom: 64px; /* Нижній відступ */
 }
 
@@ -28,6 +28,7 @@
   border-radius: 5px; /* Закруглені кути */
   background-color: #f7f7f7; /* Фоновий колір кнопок */
   transition: background-color 0.3s; /* Плавний перехід фону */
+  height: 100px;
 }
 
 .buttonBox button:hover {
