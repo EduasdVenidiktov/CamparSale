@@ -1,17 +1,30 @@
+.buttonContainer {
+  display: flex;
+  flex-direction: column; /* Стовпчик для заголовка та кнопок */
+  width: 100%; /* Ширина контейнера на всю ширину батьківського елемента */
+}
+
+.buttonContainer h2 {
+  margin-bottom: 24px; /* Нижній відступ для заголовка h2 */
+}
+
 .buttonBox {
   display: flex;
-  gap: 10px; /* Відстань між кнопками */
-  justify-items: center; /* Центрування кнопок по горизонталі */
-  text-align: center; /* Центрування тексту в кнопках */
-  width: 100px;
-  margin-bottom: 64px;
+  flex-wrap: wrap; /* Дозволити перенесення кнопок на новий ряд */
+  gap: 8px; /* Відстань між кнопками */
+  width: 100%; /* Ширина на всю ширину контейнера */
+  margin-bottom: 64px; /* Нижній відступ */
 }
 
 .buttonBox button {
+  flex: 1; /* Кнопки займають всю доступну ширину */
+  min-width: calc(
+    (100% - 2 * 8px) / 3
+  ); /* Ширина кожної кнопки з урахуванням відстані між ними */
   cursor: pointer; /* Курсор у вигляді покажчика */
-  padding: 10px 20px; /* Додати відступи для кнопок */
+  padding: 10px 20px; /* Відступи для кнопок */
   font-size: 16px; /* Розмір шрифту для кнопок */
-  border: none; /* Вилучити обводку */
+  border: none; /* Без обводки */
   border-radius: 5px; /* Закруглені кути */
   background-color: #f0f0f0; /* Фоновий колір кнопок */
   transition: background-color 0.3s; /* Плавний перехід фону */
@@ -25,15 +38,9 @@
   width: 24px;
   height: 24px;
 }
+
 .buttonText {
   display: flex; /* Використовуємо flexbox для компонування */
   flex-direction: column; /* Компонування вмісту по вертикалі */
   align-items: center; /* Центрування іконки та тексту по горизонталі */
-  cursor: pointer; /* Курсор у вигляді покажчика */
-  padding: 10px 20px; /* Додати відступи для кнопок */
-  font-size: 16px; /* Розмір шрифту для кнопок */
-  border: none; /* Вилучити обводку */
-  border-radius: 5px; /* Закруглені кути */
-  background-color: #f0f0f0; /* Фоновий колір кнопок */
-  transition: background-color 0.3s; /* Плавний перехід фону */
 }

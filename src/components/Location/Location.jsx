@@ -2,7 +2,7 @@ import css from "./Location.module.css";
 function Location() {
   return (
     <div className={css.container}>
-      <p>Location</p>
+      <p className={css.text}> Location</p>
       <input></input>
     </div>
   );

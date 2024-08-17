@@ -1,0 +1,26 @@
+.container {
+  margin-bottom: 32px;
+}
+.text {
+  margin-bottom: 8px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #101828;
+}
+
+input {
+  background: #f7f7f7;
+  width: 360px;
+  height: 56px;
+  padding: 18px 218px 18px 18px;
+  gap: 10px;
+  border-radius: 10px;
+  opacity: 0px;
+  border: none;
+}
+input:activ {
+  border: none;
+}

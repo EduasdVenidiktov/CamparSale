@@ -33,9 +33,7 @@
     <symbol id="icon-Heart" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.067" d="M27.787 6.147a7.326 7.326 0 0 0-10.373 0L16.001 7.56l-1.413-1.413a7.333 7.333 0 0 0-10.374 0 7.333 7.333 0 0 0 0 10.374l11.787 11.787 11.787-11.787a7.345 7.345 0 0 0 2.15-5.187 7.33 7.33 0 0 0-2.15-5.187z"/>
     </symbol>
-    <symbol id="icon-HeartRed" viewBox="0 0 32 32">
-      <path fill="#e44848" stroke="#e44848" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.067" d="M27.787 6.147a7.326 7.326 0 0 0-10.373 0L16.001 7.56l-1.413-1.413a7.333 7.333 0 0 0-10.374 0 7.333 7.333 0 0 0 0 10.374l11.787 11.787 11.787-11.787a7.345 7.345 0 0 0 2.15-5.187 7.33 7.33 0 0 0-2.15-5.187z" style="fill:var(--color1, #e44848);stroke:var(--color1, #e44848)"/>
-    </symbol>
+    
     <symbol id="icon-Horizontal-container" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M25.333 20V4c-6.421 6.125-6.697 11.092-6.667 16h6.667zm0 0v8H24v-4M10.667 5.333V28m-4-22.667v4a4.003 4.003 0 0 0 4 4 4.003 4.003 0 0 0 4-4v-4"/>
     </symbol>

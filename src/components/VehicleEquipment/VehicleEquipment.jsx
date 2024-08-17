@@ -4,7 +4,9 @@ import styles from "../VehicleType/VehicleType.module.css";
 export default function VehicleEquipment() {
   return (
     <div className={css.buttonContainer}>
-      <h1>Vehicle equipment</h1>
+      <p className={css.filterText}> Filters</p>
+      <h2>Vehicle equipment</h2>
+      <div className={css.separator}></div>
       <div className={css.buttonBox}>
         <button className={styles.buttonText}>
           <svg className={styles.iconStyle}>

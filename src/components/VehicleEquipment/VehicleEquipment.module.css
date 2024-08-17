@@ -1,33 +1,62 @@
 .buttonContainer {
+  display: flex;
+  flex-direction: column; /* Разместить элементы по вертикали */
 }
+
+.filterText {
+  margin-bottom: 14px;
+}
+
+.buttonContainer h2 {
+  margin-bottom: 24px; /* Нижній відступ для заголовка h2 */
+}
+
 .buttonBox {
   display: flex;
-
-  width: calc((360px - 20px) / 3); /* Вирахування ширини кожної кнопки */
-  height: 50px; /* Встановлення однакової висоти для кнопок */
-  gap: 10px; /* Відстань між кнопками */
-  justify-items: center; /* Центрування кнопок по горизонталі */
-  text-align: center; /* Центрування тексту в кнопках */
-  width: 100px;
+  flex-wrap: wrap; /* Разрешить перенос элементов на следующую строку */
+  gap: 8px; /* Відстань між кнопками */
+  width: 360px; /* Ширина контейнера для кнопок */
   margin-bottom: 64px;
+}
+
+.separator {
+  width: 360px;
+  height: 0; /* Висота смужки */
+  border-top: 1px solid #1018281a; /* Колір і стиль бордера */
+  margin-bottom: 24px; /* Відступ від заголовка */
+  opacity: 0.9; /* Прозорість */
 }
 
 .buttonBox button {
   cursor: pointer; /* Курсор у вигляді покажчика */
+  width: calc((360px - 16px) / 3); /* Ширина кнопок с учётом отступов */
+  height: 95px; /* Встановлення висоти для кнопок */
   padding: 10px 20px; /* Додати відступи для кнопок */
   font-size: 16px; /* Розмір шрифту для кнопок */
   border: none; /* Вилучити обводку */
   border-radius: 5px; /* Закруглені кути */
   background-color: #f0f0f0; /* Фоновий колір кнопок */
   transition: background-color 0.3s; /* Плавний перехід фону */
+  text-align: center; /* Центрування тексту в кнопках */
 }
 
 .buttonBox button:hover {
   background-color: #e0e0e0; /* Колір фону при наведенні */
 }
 
-/* .iconStyle {
+.iconStyle {
   width: 24px;
   height: 24px;
-  fill: black;
-} */
+}
+
+/* Для нижнего ряда с двумя кнопками */
+.buttonBox button:nth-child(4n + 1),
+.buttonBox button:nth-child(4n + 2) {
+  width: calc((360px - 16px) / 2); /* Ширина для двух кнопок в ряду */
+}
+
+.buttonBox button:nth-child(3n + 1),
+.buttonBox button:nth-child(3n + 2),
+.buttonBox button:nth-child(3n + 3) {
+  width: calc((360px - 16px) / 3); /* Ширина для трёх кнопок в ряду */
+}
