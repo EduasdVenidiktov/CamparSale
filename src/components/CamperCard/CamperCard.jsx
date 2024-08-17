@@ -1,4 +1,5 @@
 import css from "./CamperCard.module.css";
+
 const CamperCard = ({ camper }) => {
   return (
     <div className={css.camperCard}>
@@ -12,9 +13,11 @@ const CamperCard = ({ camper }) => {
 
           <div className={css.iconPrice}>
             <h2>€{camper.price}</h2>
-            <svg className={css.iconStyle}>
-              <use href="/src/components/images/icons.svg#icon-Heart"></use>
-            </svg>
+            <button className={css.btnHeart}>
+              <svg className={css.iconStyle}>
+                <use href="/src/components/images/icons.svg#icon-heart"></use>
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -31,7 +34,7 @@ const CamperCard = ({ camper }) => {
         <div className={css.buttonBox}>
           <button className={css.buttonText}>
             <svg className={css.iconStyle}>
-              <use href="/src/components/images/icons.svg#icon-Users"></use>
+              <use href="/src/components/images/icons.svg#icon-heart"></use>
             </svg>
             {camper.adults}
           </button>

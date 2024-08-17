@@ -12,7 +12,7 @@
 }
 
 input {
-  background: #f7f7f7;
+  background: #1018281a;
   width: 360px;
   height: 56px;
   padding: 18px 218px 18px 18px;
@@ -21,6 +21,28 @@ input {
   opacity: 0px;
   border: none;
 }
-input:activ {
+input:active {
   border: none;
+}
+
+.inputWrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.inputField {
+  padding-left: 30px; /* Оставить место для иконки */
+  width: 100%; /* Ширина поля ввода */
+}
+
+.iconStyle {
+  position: absolute;
+  left: 10px; /* Расположить иконку слева */
+  top: 50%;
+  transform: translateY(-50%); /* Вертикальное центрирование иконки */
+  pointer-events: none; /* Чтобы иконка не блокировала взаимодействие с input */
+  color: #000; /* Цвет иконки */
+  width: 18px;
+  height: 20px;
 }

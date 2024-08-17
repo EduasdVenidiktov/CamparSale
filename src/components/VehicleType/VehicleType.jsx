@@ -8,19 +8,19 @@ export default function VehicleType() {
       <div className={css.buttonBox}>
         <button className={css.buttonText}>
           <svg className={css.iconStyle}>
-            <use href="/src/components/images/icons.svg#icon-camper"></use>
+            <use href="/src/components/images/icons.svg#icon-camper-window"></use>
           </svg>
           Van
         </button>
         <button className={css.buttonText}>
           <svg className={css.iconStyle}>
-            <use href="/src/components/images/icons.svg#icon-camper"></use>
+            <use href="/src/components/images/icons.svg#icon-camper-door"></use>
           </svg>
           Fully Integrated
         </button>
         <button className={css.buttonText}>
           <svg className={css.iconStyle}>
-            <use href="/src/components/images/icons.svg#icon-camper"></use>
+            <use href="/src/components/images/icons.svg#icon-camper-door-window"></use>
           </svg>
           Alcove
         </button>

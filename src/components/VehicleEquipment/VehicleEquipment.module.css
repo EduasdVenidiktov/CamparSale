@@ -33,9 +33,9 @@
   height: 95px; /* Встановлення висоти для кнопок */
   padding: 10px 20px; /* Додати відступи для кнопок */
   font-size: 16px; /* Розмір шрифту для кнопок */
-  border: none; /* Вилучити обводку */
+  border: 1px solid #10182833; /* Вилучити обводку */
   border-radius: 5px; /* Закруглені кути */
-  background-color: #f0f0f0; /* Фоновий колір кнопок */
+  background-color: #f7f7f7; /* Фоновий колір кнопок */
   transition: background-color 0.3s; /* Плавний перехід фону */
   text-align: center; /* Центрування тексту в кнопках */
 }
@@ -47,6 +47,10 @@
 .iconStyle {
   width: 24px;
   height: 24px;
+}
+.iconLarge {
+  width: 32px; /* Задайте нужный размер */
+  height: 32px; /* Задайте нужный размер */
 }
 
 /* Для нижнего ряда с двумя кнопками */

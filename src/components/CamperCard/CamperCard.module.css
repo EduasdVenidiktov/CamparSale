@@ -78,3 +78,8 @@
 .btnShowSearch:hover {
   background: #d84343;
 }
+
+.btnHeart {
+  background-color: #f7f7f7;
+  border: none;
+}

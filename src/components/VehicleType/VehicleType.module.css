@@ -24,9 +24,9 @@
   cursor: pointer; /* Курсор у вигляді покажчика */
   padding: 10px 20px; /* Відступи для кнопок */
   font-size: 16px; /* Розмір шрифту для кнопок */
-  border: none; /* Без обводки */
+  border: 1px solid #10182833; /* Вилучити обводку */
   border-radius: 5px; /* Закруглені кути */
-  background-color: #f0f0f0; /* Фоновий колір кнопок */
+  background-color: #f7f7f7; /* Фоновий колір кнопок */
   transition: background-color 0.3s; /* Плавний перехід фону */
 }
 
@@ -35,12 +35,13 @@
 }
 
 .iconStyle {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 28px;
 }
 
 .buttonText {
   display: flex; /* Використовуємо flexbox для компонування */
   flex-direction: column; /* Компонування вмісту по вертикалі */
   align-items: center; /* Центрування іконки та тексту по горизонталі */
+  justify-content: center;
 }

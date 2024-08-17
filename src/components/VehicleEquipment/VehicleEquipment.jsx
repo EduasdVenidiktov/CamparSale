@@ -1,5 +1,8 @@
 import css from "./VehicleEquipment.module.css";
 import styles from "../VehicleType/VehicleType.module.css";
+import { LuShowerHead } from "react-icons/lu";
+import { TbAutomaticGearbox } from "react-icons/tb";
+import { TbToolsKitchen2 } from "react-icons/tb";
 
 export default function VehicleEquipment() {
   return (
@@ -10,32 +13,26 @@ export default function VehicleEquipment() {
       <div className={css.buttonBox}>
         <button className={styles.buttonText}>
           <svg className={styles.iconStyle}>
-            <use href="/src/components/images/icons.svg#icon-Heart"></use>
+            <use href="/src/components/images/icons.svg#"></use>
           </svg>
           AC
         </button>
         <button className={styles.buttonText}>
-          <svg className={styles.iconStyle}>
-            <use href="/src/components/images/icons.svg#icon-Heart"></use>
-          </svg>
+          <TbAutomaticGearbox className={css.iconLarge} />
           Automatic
         </button>
         <button className={styles.buttonText}>
-          <svg className={styles.iconStyle}>
-            <use href="/src/components/images/icons.svg#icon-Heart"></use>
-          </svg>
+          <TbToolsKitchen2 className={css.iconLarge} />
           Kitchen
         </button>
         <button className={styles.buttonText}>
           <svg className={styles.iconStyle}>
-            <use href="/src/components/images/icons.svg#icon-Heart"></use>
+            <use href="/src/components/images/icons.svg#icon-TV"></use>
           </svg>
           TV
         </button>
         <button className={styles.buttonText}>
-          <svg className={styles.iconStyle}>
-            <use href="/src/components/images/icons.svg#icon-Heart"></use>
-          </svg>
+          <LuShowerHead className={css.iconLarge} />
           Shower/WC
         </button>
       </div>
