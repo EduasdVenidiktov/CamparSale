@@ -1,22 +1,21 @@
 .container {
   display: flex;
-  justify-content: space-between; /* Проміжок між колонками */
-  gap: 64px; /* Проміжок між лівою і правою колонками */
-
-  max-width: 1440px; /* Загальна ширина контейнера */
-  width: 100%; /* Ширина контейнера займає всю доступну ширину */
-  margin: 0 auto; /* Вирівнювання по центру екрану */
-  padding: 0 20px; /* Відступи від країв контейнера (20px зліва і справа) */
+  justify-content: space-between;
+  /* gap: 64px; */
+  max-width: 1440px;
+  /* width: 100%; */
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; /* Врахування відступів у загальну ширину */
 }
 
 .leftSideBox {
-  flex: 1;
-  max-width: 300px; /* Встановіть потрібну ширину для лівої колонки */
+  box-sizing: border-box;
+  max-width: 360px;
 }
 
 .rightSideBox {
-  flex: 3;
-  /* Інші стилі для правої колонки */
+  box-sizing: border-box;
 }
 
 .btnShowSearch {

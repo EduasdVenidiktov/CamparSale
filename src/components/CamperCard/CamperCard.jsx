@@ -1,5 +1,4 @@
 import css from "./CamperCard.module.css";
-// import { ReactComponent as Icon } from "../images/svg/Vector.svg";
 const CamperCard = ({ camper }) => {
   return (
     <div className={css.camperCard}>

@@ -1,10 +1,15 @@
+.buttonContainer {
+}
 .buttonBox {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Три колонки для верхнього рядка */
-  grid-template-rows: auto auto; /* Два рядки */
+  display: flex;
+
+  width: calc((360px - 20px) / 3); /* Вирахування ширини кожної кнопки */
+  height: 50px; /* Встановлення однакової висоти для кнопок */
   gap: 10px; /* Відстань між кнопками */
   justify-items: center; /* Центрування кнопок по горизонталі */
   text-align: center; /* Центрування тексту в кнопках */
+  width: 100px;
+  margin-bottom: 64px;
 }
 
 .buttonBox button {
@@ -20,3 +25,9 @@
 .buttonBox button:hover {
   background-color: #e0e0e0; /* Колір фону при наведенні */
 }
+
+/* .iconStyle {
+  width: 24px;
+  height: 24px;
+  fill: black;
+} */
