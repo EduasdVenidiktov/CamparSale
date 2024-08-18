@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { openModal } from "../../redux/Modal/modalSlice";
 import CamperCard from "../CamperCard/CamperCard";
@@ -11,6 +11,8 @@ const CamperCardList = ({ campers }) => {
   const [visibleCampers, setVisibleCampers] = useState(
     campers.slice(0, itemsPerPage)
   );
+  const camperListRef = useRef(null);
+  const loadMoreRef = useRef(null); // Додаємо посилання на кнопку
 
   const handleShowMore = (camper) => {
     dispatch(openModal(camper));
@@ -18,12 +20,21 @@ const CamperCardList = ({ campers }) => {
 
   const handleLoadMore = () => {
     const nextPage = currentPage + 1;
+    const newVisibleCampers = campers.slice(0, nextPage * itemsPerPage);
+
     setCurrentPage(nextPage);
-    setVisibleCampers(campers.slice(0, nextPage * itemsPerPage));
+    setVisibleCampers(newVisibleCampers);
   };
 
+  // Використовуємо useEffect для автоматичного скролінгу
+  useEffect(() => {
+    if (currentPage > 1 && loadMoreRef.current) {
+      loadMoreRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [visibleCampers]);
+
   return (
-    <div>
+    <div className={css.camperCardListContainer} ref={camperListRef}>
       <div className={css.camperCardList}>
         {visibleCampers.map((camper) => (
           <CamperCard
@@ -34,7 +45,11 @@ const CamperCardList = ({ campers }) => {
         ))}
       </div>
       {visibleCampers.length < campers.length && (
-        <button onClick={handleLoadMore} className={css.btnLoadMore}>
+        <button
+          onClick={handleLoadMore}
+          className={css.btnLoadMore}
+          ref={loadMoreRef} // Додаємо посилання на кнопку
+        >
           Load more
         </button>
       )}
@@ -43,7 +58,6 @@ const CamperCardList = ({ campers }) => {
 };
 
 export default CamperCardList;
-
 //============== 4 elements instead previos ====================================
 // import { useState } from "react";
 // import { useDispatch } from "react-redux";
