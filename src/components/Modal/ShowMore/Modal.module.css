@@ -8,13 +8,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 300px;
 }
 
 .modalContent {
   background: #fff;
-  padding: 20px;
+  padding: 40px;
   border-radius: 8px;
   position: relative;
+  width: 30%;
 }
 
 .modalClose {
@@ -24,5 +26,53 @@
   background: transparent;
   border: none;
   font-size: 16px;
+  cursor: pointer;
+}
+
+.nameClose {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.priceStyle {
+  padding-bottom: 24px;
+}
+
+.btnCloseModal {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+.imageContainer {
+  display: flex;
+  justify-content: space-between; /* Розподіл зображень по ширині */
+  gap: 10px; /* Відступи між зображеннями */
+  max-width: 100%; /* Максимальна ширина контейнера */
+}
+
+.imgCard {
+  height: 310px;
+  width: 100%;
+  max-width: calc(
+    (100% - 20px) / 3
+  ); /* Три зображення в ряд з врахуванням відступів */
+  object-fit: cover; /* Масштабування зображення з збереженням пропорцій */
+  border-radius: 5px; /* Додавання згладження кутів */
+  padding-bottom: 24px;
+}
+
+.descriptionStyle {
+  padding-bottom: 44px;
+}
+.featuresReviews {
+  display: flex;
+  gap: 40px;
+}
+.btnModal {
+  border: none;
+  background-color: #fff;
   cursor: pointer;
 }
