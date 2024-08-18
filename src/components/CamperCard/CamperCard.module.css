@@ -5,10 +5,13 @@
   border-radius: 20px;
   margin-bottom: 32px;
   gap: 24px;
-  width: 100%; /* Додаємо ширину для контейнера */
-  box-sizing: border-box; /* Включає padding та border у загальну ширину */
+  width: 100%;
+  box-sizing: border-box; /* Включает padding и border в общую ширину */
 }
 
+.textCard {
+  flex: 1; /* Заполняет доступное пространство */
+}
 .imgCard {
   border-radius: 10px;
   width: 290px;

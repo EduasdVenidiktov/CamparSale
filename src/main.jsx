@@ -5,13 +5,16 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from "./redux/store.js"; // правильний імпорт
+import { store, persistor } from "./redux/store.js";
+import { FavoritesProvider } from "./components/FavoritesContext/FavoritesContext.jsx"; // Імпорт провайдера
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <BrowserRouter>
       <PersistGate loading={null} persistor={persistor}>
-        <App />
+        <FavoritesProvider>
+          <App />
+        </FavoritesProvider>
       </PersistGate>
     </BrowserRouter>
   </Provider>
