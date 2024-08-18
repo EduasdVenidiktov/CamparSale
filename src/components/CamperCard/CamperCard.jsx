@@ -53,12 +53,14 @@ const CamperCard = ({ camper }) => {
             </div>
           </div>
 
-          <div className={css.iconLocation}>
-            <RenderStars rating={rating} />
-            <p className={css.ratingText}>
-              {rating} ({reviewCount} reviews)
-            </p>
-            <p>{camper.location}</p>
+          <div className={css.locationContainer}>
+            <div className={css.iconLocation}>
+              <RenderStars rating={rating} />
+              <p className={css.ratingText}>
+                {rating} ({reviewCount} reviews)
+              </p>
+              <p>{camper.location}</p>
+            </div>
           </div>
 
           <p className={css.description}>{camper.description}</p>

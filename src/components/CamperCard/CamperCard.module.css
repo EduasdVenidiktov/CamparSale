@@ -24,6 +24,10 @@
 .horizontContainer {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 8px;
+
+  /* align-items: center; */
+  /* justify-items: center; */
 }
 .description {
   white-space: nowrap; /* Забороняє перенос тексту */
@@ -44,11 +48,15 @@
   gap: 10px;
   align-items: center;
 }
+
+.locationContainer {
+  margin-bottom: 24px;
+}
 .iconLocation {
   display: flex;
   gap: 10px;
   align-items: center;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
 }
 
 .buttonBox {
@@ -85,6 +93,9 @@
 .btnHeart {
   background-color: #f7f7f7;
   border: black;
+  align-items: center; /* Вирівнює контент всередині кнопки по центру */
+
+  padding: 0; /* Видаляє будь-які внутрішні відступи */
 }
 
 .iconSize {
