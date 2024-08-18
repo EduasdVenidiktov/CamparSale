@@ -1,44 +1,19 @@
-import filtersReducer from "./filtersSlice";
-import {
-  persistReducer,
-  persistStore,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import contactsReducer from "./contactsSlice";
 import { configureStore } from "@reduxjs/toolkit";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import rootReducer from "./Modal/rootReducer"; // Переконайтеся, що шлях вірний
 
-// Створюємо конфігурацію для persistReducer
-const contactsPersistConfig = {
-  key: "contacts",
-  storage: storage,
-  whitelist: ["contacts"], // Додаємо ключі, які ми хочемо зберегти
+const persistConfig = {
+  key: "root",
+  storage,
 };
 
-// Застосовуємо persistReducer до contactsReducer
-const persistedContactsReducer = persistReducer(
-  contactsPersistConfig,
-  contactsReducer
-);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-  reducer: {
-    contacts: persistedContactsReducer, // Використовуємо збережений контакт редуктор
-    filters: filtersReducer,
-  },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+  reducer: persistedReducer,
 });
 
-export const persistor = persistStore(store);
+const persistor = persistStore(store);
 
-export default store;
+export { store, persistor };

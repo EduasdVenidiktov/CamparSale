@@ -1,27 +1,66 @@
-import { useState } from "react";
+// import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+// import Modal from "../Modal/ShowMore/Modal"; // Переконайтеся, що шлях правильний
+import { closeModal, openModal } from "../../redux/Modal/modalSlice";
+import { clearForm } from "../../redux/Modal/bookingSlice";
 import CamperCard from "../CamperCard/CamperCard";
+
 import css from "./CamperCardList.module.css";
 
 const CamperCardList = ({ campers }) => {
-  const [displayedCards, setDisplayedCards] = useState(4); // Відображаємо початково 4 картки
+  const dispatch = useDispatch();
 
-  const loadMore = () => {
-    setDisplayedCards(displayedCards + 4); // Завантажуємо ще 4 картки
+  // Перевірка структури стану
+  const modalState = useSelector((state) => {
+    console.log("State:", state); // Додайте цей рядок для перевірки структури стану
+    return state.modal;
+  });
+
+  // Переконайтесь, що modalState існує перед деструктуризацією
+  const isOpen = modalState ? modalState.isOpen : false;
+  const camper = modalState ? modalState.camper : null;
+
+  const handleShowMore = (camper) => {
+    dispatch(openModal(camper));
+  };
+
+  const handleCloseModal = () => {
+    dispatch(closeModal());
+    dispatch(clearForm());
+  };
+
+  const handleBook = (formData) => {
+    // Обробка бронювання тут
+    console.log("Booking data:", formData);
+    // Наприклад, ви можете відправити форму на сервер
+    // axios.post('/api/bookings', formData)
+    //   .then(response => {
+    //     alert('Booking successful');
+    //   })
+    //   .catch(error => {
+    //     alert('Booking failed');
+    //   });
   };
 
   return (
-    <div className={css.rightContainer}>
+    <div>
       <div className={css.camperCardList}>
-        {campers.slice(0, displayedCards).map((camper) => (
-          <CamperCard key={camper.id} camper={camper} />
+        {campers.map((camper) => (
+          <CamperCard
+            key={camper.id}
+            camper={camper}
+            onShowMore={() => handleShowMore(camper)}
+          />
         ))}
       </div>
-
-      {displayedCards < campers.length && (
-        <button onClick={loadMore} className={css.loadMoreBtn}>
-          Load More
-        </button>
-      )}
+      {/* {isOpen && camper && (
+        <Modal
+          isOpen={isOpen}
+          onClose={handleCloseModal}
+          camper={camper}
+          onBook={handleBook}
+        />
+      )} */}
     </div>
   );
 };
