@@ -15,3 +15,23 @@
 .loadMoreBtn:hover {
   border-color: #e44848;
 }
+
+.btnLoadMore {
+  display: inline-flex; /* Використовуємо inline-flex для розміщення тексту в один рядок */
+  align-items: center; /* Вирівнює текст по центру вертикально */
+  justify-content: center; /* Вирівнює текст по центру горизонтально */
+
+  color: #101828;
+  border: 1px solid #47546733;
+
+  width: 145px;
+  height: 56px;
+  padding: 16px 32px 16px 32px;
+  gap: 10px;
+  border-radius: 200px;
+  opacity: 0px;
+}
+
+.btnLoadMore:hover {
+  border-color: #e44848;
+}
