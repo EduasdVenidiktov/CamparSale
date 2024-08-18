@@ -1,0 +1,49 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  padding: 8px;
+  margin: 4px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.errorMess {
+  color: red;
+  font-size: 12px;
+  margin: 4px 0;
+}
+
+.btnSend {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btnSend:hover {
+  background-color: #0056b3;
+}
+
+.field {
+  width: 100%; /* Або задайте конкретну ширину, наприклад, 400px */
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Можна додати специфічний стиль для `textarea`, якщо потрібно */
+.field-textarea {
+  width: 100%; /* Або задайте конкретну ширину, наприклад, 400px */
+  height: 100px; /* Можете налаштувати висоту */
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 400px;
+}

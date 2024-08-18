@@ -1,12 +1,29 @@
+import { useState } from "react";
+import clsx from "clsx";
 import RenderStars from "../RenderStars/RenderStars";
-import css from "./Modal.module.css"; // Добавьте стили для модального окна
+import css from "./Modal.module.css";
+import styles from "../CamperCard/CamperCard.module.css";
+import Features from "../Features/Features";
 
 const Modal = ({ camper, isOpen, onClose, children }) => {
+  const [showFeatures, setShowFeatures] = useState(false);
+  const [showReviews, setShowReviews] = useState(false);
+
   if (!isOpen) return null;
 
   const handleClosetClick = (e) => {
-    e.stopPropagation(); // Чтобы клик на кнопку не закрывал модалку
-    onClose(); // Закрываем модалку
+    e.stopPropagation();
+    onClose();
+  };
+
+  const handleShowFeaturesClick = () => {
+    setShowFeatures(true);
+    setShowReviews(false);
+  };
+
+  const handleShowReviewsClick = () => {
+    setShowFeatures(false);
+    setShowReviews(true);
   };
 
   const rating = camper.rating || 0;
@@ -23,14 +40,14 @@ const Modal = ({ camper, isOpen, onClose, children }) => {
             X
           </button>
         </div>
-        <div className={css.iconLocation}>
+        <div className={styles.iconLocation}>
           <RenderStars rating={rating} />
-          <p className={css.ratingText}>
+          <p className={styles.ratingText}>
             {rating} ({reviewCount} reviews)
           </p>
           <p>{camper.location}</p>
         </div>
-        <h2 className={css.priceStyle}>Price: €{camper.price}.00</h2>
+        <h2 className={css.priceStyle}>€{camper.price}.00</h2>
 
         <div className={css.imageContainer}>
           {camper.gallery.map((image, index) => (
@@ -44,13 +61,36 @@ const Modal = ({ camper, isOpen, onClose, children }) => {
         </div>
         <p className={css.descriptionStyle}>{camper.description}</p>
         <div className={css.featuresReviews}>
-          <h2>
-            <button className={css.btnModal}>Features</button>
-          </h2>
-          <h2>
-            <button className={css.btnModal}>Reviews</button>
-          </h2>
+          <button
+            className={clsx(css.btnModal, {
+              [css.btnModalActive]: showFeatures,
+            })}
+            onClick={handleShowFeaturesClick}
+          >
+            Features
+          </button>
+          <button
+            className={clsx(css.btnModal, {
+              [css.btnModalActive]: showReviews,
+            })}
+            onClick={handleShowReviewsClick}
+          >
+            Reviews
+          </button>
         </div>
+        {showFeatures && (
+          <Features details={camper.details} equipment={camper.equipment} />
+        )}
+        {showReviews && (
+          <div>
+            {reviews.map((review, index) => (
+              <div key={index}>
+                <p>{review.text}</p>
+                <p>Rating: {review.rating}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

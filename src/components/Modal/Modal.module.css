@@ -76,6 +76,9 @@
   background-color: #fff;
   cursor: pointer;
 }
+.btnModalActive {
+  border-bottom: 2px solid red; /* Червона лінія під кнопкою */
+}
 
 .iconLocation {
   display: flex;
