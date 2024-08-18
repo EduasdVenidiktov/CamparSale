@@ -76,3 +76,15 @@
   background-color: #fff;
   cursor: pointer;
 }
+
+.iconLocation {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.ratingText {
+  text-decoration: underline; /* Підкреслює текст */
+  color: black; /* Задайте колір для підкреслення */
+  font-weight: normal; /* Додає жирність тексту */
+}

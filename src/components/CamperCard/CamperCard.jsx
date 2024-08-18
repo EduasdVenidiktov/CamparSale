@@ -2,7 +2,7 @@ import { useState } from "react";
 import css from "./CamperCard.module.css";
 import { FaHeart } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
-import Modal from "../Modal/ShowMore/Modal";
+import Modal from "../Modal/Modal";
 import RenderStars from "../RenderStars/RenderStars";
 
 const CamperCard = ({ camper }) => {

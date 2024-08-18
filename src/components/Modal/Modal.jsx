@@ -1,6 +1,5 @@
-import RenderStars from "../../RenderStars/RenderStars";
+import RenderStars from "../RenderStars/RenderStars";
 import css from "./Modal.module.css"; // Добавьте стили для модального окна
-import styles from "../../CamperCard/CamperCard.module.css";
 
 const Modal = ({ camper, isOpen, onClose, children }) => {
   if (!isOpen) return null;
@@ -24,9 +23,9 @@ const Modal = ({ camper, isOpen, onClose, children }) => {
             X
           </button>
         </div>
-        <div className={styles.iconLocation}>
+        <div className={css.iconLocation}>
           <RenderStars rating={rating} />
-          <p className={styles.ratingText}>
+          <p className={css.ratingText}>
             {rating} ({reviewCount} reviews)
           </p>
           <p>{camper.location}</p>
