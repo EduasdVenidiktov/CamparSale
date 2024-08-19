@@ -12,17 +12,17 @@ function Navigation() {
       <ul className={css.navButton}>
         <li>
           <NavLink to="/" end className={buildLinkClass}>
-            Home
+            <h2>Home</h2>
           </NavLink>
         </li>
         <li>
           <NavLink to="/catalog" className={buildLinkClass}>
-            Catalog
+            <h2>Catalog</h2>
           </NavLink>
         </li>
         <li>
           <NavLink to="/favorites" className={buildLinkClass}>
-            Favorites
+            <h2>Favorites</h2>
           </NavLink>
         </li>
       </ul>
