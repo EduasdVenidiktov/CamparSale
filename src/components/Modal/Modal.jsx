@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import RenderStars from "../RenderStars/RenderStars";
 import css from "./Modal.module.css";
@@ -9,9 +9,30 @@ const Modal = ({ camper, isOpen, onClose, children }) => {
   const [showFeatures, setShowFeatures] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEsc = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleEsc);
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
-  const handleClosetClick = (e) => {
+  const handleBackdropClick = (e) => {
+    e.stopPropagation();
+    onClose();
+  };
+
+  const handleCloseClick = (e) => {
     e.stopPropagation();
     onClose();
   };
@@ -31,12 +52,12 @@ const Modal = ({ camper, isOpen, onClose, children }) => {
   const reviewCount = reviews.length;
 
   return (
-    <div className={css.modalOverlay} onClick={handleClosetClick}>
+    <div className={css.modalOverlay} onClick={handleBackdropClick}>
       <div className={css.modalContent} onClick={(e) => e.stopPropagation()}>
         {children}
         <div className={css.nameClose}>
           <h2>{camper.name}</h2>
-          <button className={css.btnCloseModal} onClick={handleClosetClick}>
+          <button className={css.btnCloseModal} onClick={handleCloseClick}>
             X
           </button>
         </div>
