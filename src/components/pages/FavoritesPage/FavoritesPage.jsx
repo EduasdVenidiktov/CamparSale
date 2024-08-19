@@ -1,27 +1,27 @@
+import { useRef } from "react";
 import DocumentTitle from "../../DocumentTitle";
 import { useFavorites } from "../../FavoritesContext/FavoritesContext"; // Імпорт хука для доступу до контексту
+import CamperCard from "../../CamperCard/CamperCard"; // Імпорт компонента CamperCard
+import css from "./FavoritesPage.module.css"; // Імпорт стилів
 
 export default function FavoritesPage() {
   const { favorites } = useFavorites(); // Отримання улюблених камперів
+  const camperListRef = useRef(null);
 
   return (
-    <>
+    <div className={css.listCamperCard}>
       <DocumentTitle>FavoritesPage</DocumentTitle>
-      <h1>FavoritesPage</h1>
       {favorites.length > 0 ? (
-        <ul>
-          {favorites.map((camper) => (
-            <li key={camper._id}>
-              <h2>{camper.name}</h2>
-              <p>Price: €{camper.price}.00</p>
-              <p>Location: {camper.location}</p>
-              {/* Виведіть іншу інформацію про кампер тут */}
-            </li>
-          ))}
-        </ul>
+        <div className={css.camperCardListContainer} ref={camperListRef}>
+          <div className={css.camperCardList}>
+            {favorites.map((camper) => (
+              <CamperCard key={camper._id} camper={camper} />
+            ))}
+          </div>
+        </div>
       ) : (
         <p>No favorites added yet.</p>
       )}
-    </>
+    </div>
   );
 }
