@@ -26,6 +26,8 @@ const CamperCard = ({ camper }) => {
     }
   };
 
+  const formattedPrice = camper.price.toFixed(2).replace(".", ",");
+
   return (
     <>
       <div className={css.camperCard}>
@@ -42,7 +44,7 @@ const CamperCard = ({ camper }) => {
             </div>
 
             <div className={css.iconLocation}>
-              <h2>€{camper.price}.00</h2>
+              <h2>€{formattedPrice}</h2>
               <button className={css.btnHeart} onClick={handleHeartClick}>
                 {isFavorite(camper._id) ? (
                   <FaHeart className={css.iconSize} />
@@ -81,7 +83,12 @@ const CamperCard = ({ camper }) => {
       </div>
 
       {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={closeModal} camper={camper} />
+        <Modal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          camper={camper}
+          formattedPrice={formattedPrice}
+        />
       )}
     </>
   );

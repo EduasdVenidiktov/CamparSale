@@ -5,7 +5,7 @@ import css from "./Modal.module.css";
 import styles from "../CamperCard/CamperCard.module.css";
 import Features from "../Features/Features";
 
-const Modal = ({ camper, isOpen, onClose, children }) => {
+const Modal = ({ camper, isOpen, onClose, children, formattedPrice }) => {
   const [showFeatures, setShowFeatures] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
 
@@ -68,7 +68,7 @@ const Modal = ({ camper, isOpen, onClose, children }) => {
           </p>
           <p>{camper.location}</p>
         </div>
-        <h2 className={css.priceStyle}>€{camper.price}.00</h2>
+        <h2 className={css.priceStyle}>€{formattedPrice}</h2>
 
         <div className={css.imageContainer}>
           {camper.gallery.map((image, index) => (
