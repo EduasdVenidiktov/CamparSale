@@ -2,10 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const bookingSlice = createSlice({
   name: "booking",
-  initialState: [],
+  initialState: {
+    bookings: [],
+  },
+
   reducers: {
     addBooking: (state, action) => {
-      state.push(action.payload);
+      state.bookings.push(action.payload);
     },
   },
 });

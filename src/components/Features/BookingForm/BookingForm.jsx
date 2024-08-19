@@ -1,6 +1,5 @@
 import css from "./BookingForm.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useId } from "react";
 import * as Yup from "yup";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
@@ -14,23 +13,23 @@ const initialValues = {
   Comment: "",
 };
 
+const validationSchema = Yup.object().shape({
+  Name: Yup.string()
+    .trim()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  Email: Yup.string().email("Invalid email format").required("Required"),
+  BookingDate: Yup.date().required("Required").nullable(),
+  Comment: Yup.string().max(500, "Comment too long").nullable(),
+});
+
 const BookingForm = () => {
   const dispatch = useDispatch();
-  const nameFieldId = useId();
+  const nameFieldId = nanoid();
   const emailFieldId = nanoid();
   const bookingDateFieldId = nanoid();
   const commentFieldId = nanoid();
-
-  const validationSchema = Yup.object().shape({
-    Name: Yup.string()
-      .trim()
-      .min(3, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Required"),
-    Email: Yup.string().email("Invalid email format").required("Required"),
-    BookingDate: Yup.date().required("Required").nullable(),
-    Comment: Yup.string().max(500, "Comment too long").nullable(),
-  });
 
   const handleSubmit = (values, actions) => {
     dispatch(addBooking(values)); // Відправляє дані до Redux Store
