@@ -1,7 +1,9 @@
 body {
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.5;
   background-color: #f7f7f7;
+  max-width: 1440px;
+  margin: 20px auto;
 }
 
 h1,
@@ -9,9 +11,13 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
   margin: 0;
+  color: #101828;
+}
+
+p {
+  color: #475467;
 }
 
 ul,

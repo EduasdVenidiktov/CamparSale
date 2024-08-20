@@ -25,9 +25,6 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
-
-  /* align-items: center; */
-  /* justify-items: center; */
 }
 .description {
   white-space: nowrap; /* Забороняє перенос тексту */
@@ -110,7 +107,6 @@
 
 .iconSize {
   color: #e44848;
-
   stroke: black; /* Чорний контур для неактивного серця */
   stroke-width: 1px; /* Товщина контуру */
 }

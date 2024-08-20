@@ -5,10 +5,11 @@ import HomePage from "./components/pages/HomePage/HomePage";
 import FavoritesPage from "./components/pages/FavoritesPage/FavoritesPage";
 import CatalogPage from "./components/pages/CatalogPage/CatalogPage";
 import Navigation from "./components/Navigation/Navigation";
+import css from "./App.module.css";
 
 export default function App() {
   return (
-    <>
+    <div className={css.container}>
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -17,6 +18,6 @@ export default function App() {
         <Route path="*" element={<HomePage />} />{" "}
         {/* Перенаправлення на Home для невідомих маршрутів */}
       </Routes>
-    </>
+    </div>
   );
 }

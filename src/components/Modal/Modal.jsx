@@ -5,6 +5,8 @@ import css from "./Modal.module.css";
 import styles from "../CamperCard/CamperCard.module.css";
 import Features from "../Features/Features";
 
+import { GrClose } from "react-icons/gr";
+
 const Modal = ({ camper, isOpen, onClose, children, formattedPrice }) => {
   const [showFeatures, setShowFeatures] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
@@ -57,9 +59,11 @@ const Modal = ({ camper, isOpen, onClose, children, formattedPrice }) => {
         {children}
         <div className={css.nameClose}>
           <h2>{camper.name}</h2>
-          <button className={css.btnCloseModal} onClick={handleCloseClick}>
-            X
-          </button>
+          <div className={css.modalCloseContainer}>
+            <button className={css.btnCloseModal} onClick={handleCloseClick}>
+              <GrClose className={css.closeStyle} />
+            </button>
+          </div>
         </div>
         <div className={styles.iconLocation}>
           <RenderStars rating={rating} />
@@ -88,7 +92,7 @@ const Modal = ({ camper, isOpen, onClose, children, formattedPrice }) => {
             })}
             onClick={handleShowFeaturesClick}
           >
-            Features
+            <h2>Features</h2>
           </button>
           <button
             className={clsx(css.btnModal, {
@@ -96,7 +100,7 @@ const Modal = ({ camper, isOpen, onClose, children, formattedPrice }) => {
             })}
             onClick={handleShowReviewsClick}
           >
-            Reviews
+            <h2>Reviews</h2>
           </button>
         </div>
         {showFeatures && (

@@ -17,22 +17,29 @@
   border-radius: 8px;
   position: relative;
   width: 100%;
+
+  max-height: 80vh; /* Ограничиваем высоту модального окна */
+  overflow-y: auto; /* Добавляем прокрутку по вертикали */
 }
 
 .modalClose {
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 10px;
   background: transparent;
   border: none;
   font-size: 16px;
   cursor: pointer;
+
+  z-index: 10; /* Обеспечиваем, что крестик выше других элементов */
 }
 
 .nameClose {
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
+
+  align-items: center; /* Центрируем текст и кнопку */
 }
 
 .priceStyle {
@@ -42,10 +49,23 @@
 .btnCloseModal {
   width: 32px;
   height: 32px;
-  border: none;
   background-color: #fff;
+  position: fixed;
+  top: 7em;
+  right: 15em;
+  background: transparent;
+  border: none;
+  font-size: 16px;
   cursor: pointer;
+  z-index: 10; /* Обеспечиваем, что крестик выше других элементов */
 }
+
+.closeStyle {
+  font-size: 16px; /* Увеличьте размер шрифта */
+  font-weight: bold;
+  color: #101828; /* Убедитесь, что цвет иконки черный */
+}
+
 .imageContainer {
   display: flex;
   justify-content: space-between; /* Розподіл зображень по ширині */
@@ -75,9 +95,10 @@
   border: none;
   background-color: #fff;
   cursor: pointer;
+  padding-bottom: 24px;
 }
 .btnModalActive {
-  border-bottom: 2px solid red; /* Червона лінія під кнопкою */
+  border-bottom: 5px solid #e44848; /* Червона лінія під кнопкою */
 }
 
 .iconLocation {
