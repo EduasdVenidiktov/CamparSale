@@ -30,7 +30,7 @@ function Location() {
 
   return (
     <div className={css.container}>
-      <p className={css.text}>Location</p>
+      <h3 className={css.text}>Location</h3>
       <div className={css.inputWrapper}>
         <GrLocation className={css.iconStyle} />
         <input

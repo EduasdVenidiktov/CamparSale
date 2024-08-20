@@ -1,7 +1,7 @@
 import VehicleEquipment from "../VehicleEquipment/VehicleEquipment";
 import VehicleType from "../VehicleType/VehicleType";
 
-export default function Filter() {
+export default function Filters() {
   return (
     <div>
       <VehicleEquipment />

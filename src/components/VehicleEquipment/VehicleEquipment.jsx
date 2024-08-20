@@ -7,7 +7,7 @@ import { TbToolsKitchen2 } from "react-icons/tb";
 export default function VehicleEquipment() {
   return (
     <div className={css.buttonContainer}>
-      <p className={css.filterText}> Filters</p>
+      <h3 className={css.filterText}> Filters</h3>
       <h2>Vehicle equipment</h2>
       <div className={css.separator}></div>
       <div className={css.buttonBox}>

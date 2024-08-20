@@ -1,9 +1,9 @@
 import campersData from "../../../../campersData.json";
 import DocumentTitle from "../../DocumentTitle";
-import Filter from "../../Filters/Filters";
 import Location from "../../Location/Location";
 import css from "./CatalogPage.module.css";
 import CamperCardList from "../../CamperCardList/CamperCardList";
+import Filters from "../../Filters/Filters";
 
 export default function CatalogPage() {
   return (
@@ -11,7 +11,7 @@ export default function CatalogPage() {
       <DocumentTitle>CatalogPage</DocumentTitle>
       <div className={css.LeftSideBox}>
         <Location />
-        <Filter />
+        <Filters />
         <button type="submit" className={css.btnShowSearch}>
           Search
         </button>
