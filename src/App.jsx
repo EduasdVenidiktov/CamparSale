@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation/Navigation";
 import css from "./App.module.css";
 import { lazy } from "react";
 import { Suspense } from "react";
+import Loader from "./components/loader/Loader";
 
 const HomePage = lazy(() => import("./components/pages/HomePage/HomePage"));
 const CatalogPage = lazy(() =>
@@ -17,7 +18,7 @@ export default function App() {
   return (
     <div className={css.container}>
       <Navigation />
-      <Suspense fallback={<div>loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<CatalogPage />} />
