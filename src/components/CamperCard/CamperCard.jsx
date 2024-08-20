@@ -68,8 +68,10 @@ const CamperCard = ({ camper }) => {
           <p className={css.description}>{camper.description}</p>
 
           <div className={css.buttonBox}>
-            {/* Parameter buttons */}
-            {/* ... */}
+            {/* логіка відображеня обранних кнопок */}
+            {/* <svg>
+              <use href="/src/components/images/iconButton.svg#icon-beds"></use>
+            </svg> */}
           </div>
 
           <button
