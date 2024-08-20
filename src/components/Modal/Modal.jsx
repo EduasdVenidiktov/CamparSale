@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import RenderStars from "../RenderStars/RenderStars";
 import css from "./Modal.module.css";
@@ -10,6 +10,7 @@ import { GrClose } from "react-icons/gr";
 const Modal = ({ camper, isOpen, onClose, children, formattedPrice }) => {
   const [showFeatures, setShowFeatures] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
+  const contentRef = useRef(null); // Створюємо реф для контенту
 
   useEffect(() => {
     if (!isOpen) return;
@@ -40,13 +41,25 @@ const Modal = ({ camper, isOpen, onClose, children, formattedPrice }) => {
   };
 
   const handleShowFeaturesClick = () => {
-    setShowFeatures(true);
-    setShowReviews(false);
-  };
+    if (!showFeatures) {
+      setShowFeatures(true);
+      setShowReviews(false);
+      contentRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }; // Виправлено
 
   const handleShowReviewsClick = () => {
-    setShowFeatures(false);
-    setShowReviews(true);
+    if (!showReviews) {
+      setShowFeatures(false);
+      setShowReviews(true);
+      contentRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   const rating = camper.rating || 0;
@@ -85,7 +98,7 @@ const Modal = ({ camper, isOpen, onClose, children, formattedPrice }) => {
           ))}
         </div>
         <p className={css.descriptionStyle}>{camper.description}</p>
-        <div className={css.featuresReviews}>
+        <div ref={contentRef} className={css.featuresReviews}>
           <button
             className={clsx(css.btnModal, {
               [css.btnModalActive]: showFeatures,
