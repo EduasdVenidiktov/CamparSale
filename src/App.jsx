@@ -6,12 +6,12 @@ import { lazy } from "react";
 import { Suspense } from "react";
 import Loader from "./components/loader/Loader";
 
-const HomePage = lazy(() => import("./components/pages/HomePage/HomePage"));
+const HomePage = lazy(() => import("./components/pages/HomePage/HomePage.jsx"));
 const CatalogPage = lazy(() =>
-  import("./components/pages/CatalogPage/CatalogPage")
+  import("./components/pages/CatalogPage/CatalogPage.jsx")
 );
 const FavoritesPage = lazy(() =>
-  import("./components/pages/FavoritesPage/FavoritesPage")
+  import("./components/pages/FavoritesPage/FavoritesPage.jsx")
 );
 
 export default function App() {
